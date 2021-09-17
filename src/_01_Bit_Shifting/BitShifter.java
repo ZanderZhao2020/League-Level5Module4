@@ -7,9 +7,9 @@ public class BitShifter {
 		int numShifted = num << 1;
 		
 		// 2. Print the value of numShifted, and convert that value to binary.
-		
+		System.out.println(_00_Binary_Conversion.DecimalToBinary.convertDecimalToBinary(num));
+		System.out.println(_00_Binary_Conversion.DecimalToBinary.convertDecimalToBinary(numShifted));
 		// 3. Compare the two binary values. Can you figure out what the << operator is for?
-		
 		// 4. Try shifting num 3 places.
 		
 		// FYI: Binary values can be shifted to the right as well using the >> operator.	
