@@ -29,27 +29,27 @@ public class PseudoRNG {
 	long xorShift(){
 		//1. Create a local long called seed and set it equal to the member variable 
 		//   We will only use the local variable for the rest of the method
-		long Sed = Seed;
+		long seed = this.Seed;
 		//2. Shift seed to the left 13 bits and save the result
-		long Temp = Sed << 13;
+		long temp = seed << 13;
 		//3. xor seed by the result of step 1 and save that result
-		long Temp0 = Sed ^ Seed;
+		long temp0 = seed ^ temp;
 		//4. Set seed equal to the result of step 2
-		Sed = Temp;
+		seed = temp0;
 		//5. Shift seed to the right 7 bits and save the result
-		long Temp1 = Sed >> 7;
+		long temp1 = seed >> 7;
 		//6. xor seed by the result of step 4 and save that result
-		long Temp2 = Sed ^ Temp1;
+		long temp2 = seed ^ temp1;
 		//7. Set seed equal to the result of step 5
-		Sed = Temp1;
+		seed = temp2;
 		//8. Shift seed to the left 17 bits and save the result
-		long Temp3 = Sed << 17;
+		long temp3 = seed << 17;
 		//9. xor seed by the result of step 7 and save that result
-		long Temp4 = Sed ^ Temp1;
+		long temp4 = seed ^ temp3;
 		//10. Set seed equal to the result of step 8
-		Sed = Temp3;
+		this.Seed = temp4;
 		//11. change the line below to return seed
-		return Sed;
+		return this.Seed;
 		
 		//For fun, see if you can rewrite the method using only 4 lines of code
 	}
@@ -61,6 +61,12 @@ public class PseudoRNG {
 		//1. Create a PseudoRNG object with any seed. 
 		PseudoRNG PRNG = new PseudoRNG(69);
 		//2. Print the result of xorShift() 3 times and note the random numbers. 
+		System.out.println(PRNG.xorShift());
+		System.out.println(PRNG.xorShift());
+		System.out.println(PRNG.xorShift());
+		System.out.println(PRNG.xorShift());
+		System.out.println(PRNG.xorShift());
+		System.out.println(PRNG.xorShift());
 		System.out.println(PRNG.xorShift());
 		System.out.println(PRNG.xorShift());
 		System.out.println(PRNG.xorShift());
